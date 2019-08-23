@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/purple-green.css';
+
+html, body, #root {
+  background-image: url('assets/background-gray.png');
+  background-size: 100%;
+  color: white;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
