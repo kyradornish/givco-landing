@@ -64,13 +64,16 @@
   <div fxLayout="row">
     Be the first to hear about our launch and other news!
   </div>
-  <div fxLayout="row" class="email-input">
-    <mat-form-field fxFlex color="red">
-      <mat-label>
-        <mat-icon class="icon">email</mat-icon>Email
-      </mat-label>
-      <input matInput formControlName="email" type="email" />
-    </mat-form-field>
+  <div fxLayout="row">
+    <form [formGroup]="emailForm" (ngSubmit)="submitEmail()" #resetEmailForm="ngForm" novalidate>
+      <mat-form-field fxFlex color="red" class="email-input">
+        <mat-label>
+          <mat-icon class="icon">email</mat-icon>Email
+        </mat-label>
+        <input matInput formControlName="email" type="email" />
+        <mat-error *ngIf="handleError('email', 'required')">Please provide a valid email</mat-error>
+      </mat-form-field>
+    </form>
   </div>
   <div fxLayout="row" class="submit-button">
     <button mat-button type="submit">SIGN ME UP</button>
