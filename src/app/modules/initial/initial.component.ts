@@ -9,6 +9,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class InitialComponent implements OnInit {
   emailForm: FormGroup;
+  submitted = false;
 
   constructor(
     private databaseService: DatabaseService,
@@ -37,6 +38,6 @@ export class InitialComponent implements OnInit {
       this.databaseService.addEmail(this.emailForm.value);
       this.resetForm();
     }
+    this.submitted = true;
   }
-
 }

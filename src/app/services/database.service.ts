@@ -15,7 +15,7 @@ export class DatabaseService {
   addEmail(email) {
     console.log('adding email to db', email);
     this.emailsList.push(email)
-    .catch(error => this.errorMgmt(error));
+      .catch(error => this.errorMgmt(error));
   }
 
   private errorMgmt(error) {
